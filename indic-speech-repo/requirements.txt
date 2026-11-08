@@ -1,0 +1,12 @@
+faster-whisper
+jiwer
+datasets
+transformers
+accelerate
+bitsandbytes
+torch
+numpy
+pandas
+scipy
+matplotlib
+tabulate

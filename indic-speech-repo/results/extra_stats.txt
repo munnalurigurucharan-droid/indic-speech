@@ -1,0 +1,58 @@
+== Response language (share of responses) ==
+      in_lang  english  other
+lang                         
+hi      0.162    0.796  0.042
+te      0.108    0.746  0.146
+
+== Correction minus baseline, paired bootstrap (mean, 95% CI) ==
+hi clean correctness +0.100 (-0.050, +0.267) 
+hi clean hallucination -0.050 (-0.167, +0.067) 
+hi clean used_wer +0.014 (-0.007, +0.035) 
+hi clean used_cer +0.041 (+0.024, +0.061) *
+hi clean rtf +0.569 (+0.514, +0.629) *
+hi noisy correctness +0.067 (-0.100, +0.233) 
+hi noisy hallucination -0.017 (-0.133, +0.117) 
+hi noisy used_wer +0.014 (-0.008, +0.040) 
+hi noisy used_cer +0.048 (+0.029, +0.071) *
+hi noisy rtf +0.555 (+0.511, +0.599) *
+te clean correctness -0.183 (-0.383, +0.000) 
+te clean hallucination +0.167 (+0.017, +0.317) *
+te clean used_wer +0.165 (+0.097, +0.238) *
+te clean used_cer +0.297 (+0.214, +0.387) *
+te clean rtf +0.670 (+0.567, +0.770) *
+te noisy correctness -0.200 (-0.367, -0.033) *
+te noisy hallucination +0.033 (-0.117, +0.183) 
+te noisy used_wer +0.098 (+0.050, +0.151) *
+te noisy used_cer +0.224 (+0.153, +0.297) *
+te noisy rtf +0.823 (+0.741, +0.910) *
+CER lowered / unchanged / raised by correction: {'hi': (23, 16, 81), 'te': (18, 9, 93)}
+
+== Clean to noisy, paired bootstrap on ASR error ==
+hi wer +0.073 (+0.048, +0.099)
+hi cer +0.051 (+0.033, +0.071)
+te wer +0.068 (+0.044, +0.092)
+te cer +0.065 (+0.048, +0.085)
+
+== WER terciles and Spearman (baseline rows) ==
+hi       asr_wer  correctness  hallucination
+bin                                      
+low     0.174        1.366          0.195
+mid     0.314        1.077          0.410
+high    0.487        0.800          0.700
+hi Spearman WER-correctness SignificanceResult(statistic=np.float64(-0.3481885329752968), pvalue=np.float64(9.740730866766751e-05))
+hi Spearman WER-hallucination SignificanceResult(statistic=np.float64(0.3990637090091016), pvalue=np.float64(6.337868320319985e-06))
+te       asr_wer  correctness  hallucination
+bin                                      
+low     0.573        1.275          0.300
+mid     0.770        0.975          0.425
+high    0.901        1.000          0.550
+te Spearman WER-correctness SignificanceResult(statistic=np.float64(-0.14952665632954298), pvalue=np.float64(0.1030982498964866))
+te Spearman WER-hallucination SignificanceResult(statistic=np.float64(0.2202938520467695), pvalue=np.float64(0.01561812124588472))
+
+== Judge vs audit (n=20) ==
+correctness agreement 0.4 kappa 0.11
+hallucination agreement 0.45 kappa 0.04
+      correctness  audit_correctness  hallucination  audit_hallucination
+lang                                                                    
+hi           1.22               0.89           0.56                 0.67
+te           1.00               0.18           0.27                 1.00
